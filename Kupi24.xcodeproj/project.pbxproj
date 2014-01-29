@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1377DE818995A8200C72018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1377DE718995A8200C72018 /* UIKit.framework */; };
+		F1377DEA18995A8200C72018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1377DE918995A8200C72018 /* Foundation.framework */; };
+		F1377DEC18995A8200C72018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1377DEB18995A8200C72018 /* CoreGraphics.framework */; };
+		F1377DF218995A8200C72018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1377DF018995A8200C72018 /* InfoPlist.strings */; };
+		F1377DF418995A8200C72018 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1377DF318995A8200C72018 /* main.m */; };
+		F1377DF818995A8200C72018 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1377DF718995A8200C72018 /* AppDelegate.m */; };
+		F1377DFB18995A8200C72018 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1377DF918995A8200C72018 /* MainStoryboard.storyboard */; };
+		F1377DFE18995A8200C72018 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1377DFD18995A8200C72018 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F1377DE318995A8200C72018 /* Kupi24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kupi24.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1377DE718995A8200C72018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F1377DE918995A8200C72018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F1377DEB18995A8200C72018 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F1377DEF18995A8200C72018 /* Kupi24-Info.plist */ = {isa = PBXFileReference; path = "Kupi24-Info.plist"; sourceTree = "<group>"; };
+		F1377DF118995A8200C72018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F1377DF318995A8200C72018 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F1377DF518995A8200C72018 /* Kupi24-Prefix.pch */ = {isa = PBXFileReference; path = "Kupi24-Prefix.pch"; sourceTree = "<group>"; };
+		F1377DF618995A8200C72018 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		F1377DF718995A8200C72018 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F1377DFA18995A8200C72018 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F1377DFC18995A8200C72018 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		F1377DFD18995A8200C72018 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1377DE018995A8200C72018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1377DE818995A8200C72018 /* UIKit.framework in Frameworks */,
+				F1377DEA18995A8200C72018 /* Foundation.framework in Frameworks */,
+				F1377DEC18995A8200C72018 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1377DD818995A8100C72018 = {
+			isa = PBXGroup;
+			children = (
+				F1377DED18995A8200C72018 /* Kupi24 */,
+				F1377DE618995A8200C72018 /* Frameworks */,
+				F1377DE418995A8200C72018 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1377DE418995A8200C72018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1377DE318995A8200C72018 /* Kupi24.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1377DE618995A8200C72018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1377DE718995A8200C72018 /* UIKit.framework */,
+				F1377DE918995A8200C72018 /* Foundation.framework */,
+				F1377DEB18995A8200C72018 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1377DED18995A8200C72018 /* Kupi24 */ = {
+			isa = PBXGroup;
+			children = (
+				F1377DF618995A8200C72018 /* AppDelegate.h */,
+				F1377DF718995A8200C72018 /* AppDelegate.m */,
+				F1377DF918995A8200C72018 /* MainStoryboard.storyboard */,
+				F1377DFC18995A8200C72018 /* ViewController.h */,
+				F1377DFD18995A8200C72018 /* ViewController.m */,
+				F1377DEE18995A8200C72018 /* Supporting Files */,
+			);
+			path = Kupi24;
+			sourceTree = "<group>";
+		};
+		F1377DEE18995A8200C72018 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1377DEF18995A8200C72018 /* Kupi24-Info.plist */,
+				F1377DF018995A8200C72018 /* InfoPlist.strings */,
+				F1377DF318995A8200C72018 /* main.m */,
+				F1377DF518995A8200C72018 /* Kupi24-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1377DE218995A8200C72018 /* Kupi24 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1377E0118995A8200C72018 /* Build configuration list for PBXNativeTarget "Kupi24" */;
+			buildPhases = (
+				F1377DDF18995A8200C72018 /* Sources */,
+				F1377DE018995A8200C72018 /* Frameworks */,
+				F1377DE118995A8200C72018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kupi24;
+			productName = Kupi24;
+			productReference = F1377DE318995A8200C72018 /* Kupi24.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1377DDA18995A8100C72018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F1377DDD18995A8100C72018 /* Build configuration list for PBXProject "Kupi24" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F1377DD818995A8100C72018;
+			productRefGroup = F1377DE418995A8200C72018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1377DE218995A8200C72018 /* Kupi24 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1377DE118995A8200C72018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1377DF218995A8200C72018 /* InfoPlist.strings in Resources */,
+				F1377DFB18995A8200C72018 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1377DDF18995A8200C72018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1377DF418995A8200C72018 /* main.m in Sources */,
+				F1377DF818995A8200C72018 /* AppDelegate.m in Sources */,
+				F1377DFE18995A8200C72018 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F1377DF018995A8200C72018 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1377DF118995A8200C72018 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F1377DF918995A8200C72018 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1377DFA18995A8200C72018 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1377DFF18995A8200C72018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F1377E0018995A8200C72018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1377E0218995A8200C72018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kupi24/Kupi24-Prefix.pch";
+				INFOPLIST_FILE = "Kupi24/Kupi24-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F1377E0318995A8200C72018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kupi24/Kupi24-Prefix.pch";
+				INFOPLIST_FILE = "Kupi24/Kupi24-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1377DDD18995A8100C72018 /* Build configuration list for PBXProject "Kupi24" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1377DFF18995A8200C72018 /* Debug */,
+				F1377E0018995A8200C72018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1377E0118995A8200C72018 /* Build configuration list for PBXNativeTarget "Kupi24" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1377E0218995A8200C72018 /* Debug */,
+				F1377E0318995A8200C72018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1377DDA18995A8100C72018 /* Project object */;
+}
