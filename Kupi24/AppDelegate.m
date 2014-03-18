@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Product.h"
+#import "ViewController.h"
+#import "JSON.h"
 
 @implementation AppDelegate
 
@@ -14,10 +17,147 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+  //  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+   // [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Untitled-1.png"] forBarMetrics:UIBarMetricsDefault];
+   
+    
+    deviceToken = [[NSData alloc] init];
+    
+     _products = [NSMutableArray arrayWithCapacity:200];
+
+    NSURLRequest *pageRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://kupi24.mk/api/all.php"] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:4];
+    pageConnection = [[NSURLConnection alloc] initWithRequest:pageRequest delegate:self];
+    
+    pageData = [[NSMutableData alloc] init];
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+
     return YES;
 }
-							
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)devToken
+{
+	NSLog(@"My token is: %@", devToken);
+    deviceToken = devToken;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];        
+    if(![defaults objectForKey:@"firstRun"])                             // ovde samo dodaj ! za da se povika samo prviot part
+    {
+                                                                            // i odkomentiraj ovie dve linii
+        [defaults setObject:[NSDate date] forKey:@"firstRun"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSString * token = [NSString stringWithFormat:@"%@", deviceToken];
+        token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+        token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+        token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+        
+        NSString *post = [NSString stringWithFormat:@"deviceToken=%@", token];
+        
+        NSLog(@"POST = %@", post);
+        
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:@"http://kupi24.mk/api/insertToken.php"]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        
+        (void) [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        
+    }
+    
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+		
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	[responseData setLength:0];
+    
+    NSLog(@"responseeeeeeeeeeEEEEE = %@", response);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    [pageData appendData:data];
+    
+    NSLog(@"data recived = %@", pageData);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    NSLog(@"Connection Failed!");    
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {	
+	
+    NSError *error;
+    
+    JSON = [[NSArray alloc]  init]; 
+    JSON = [NSJSONSerialization JSONObjectWithData: pageData
+                                           options: NSJSONReadingMutableContainers 
+                                             error: &error];
+    
+    NSLog(@"JSON = %@", JSON);
+    
+    [self fillProducts];
+    
+}
+
+- (void)fillProducts {
+    
+    Product *product;
+    
+    for (int i = 0; i < [JSON count]; i++) {
+        
+        product = [[Product alloc] init];
+        product.title = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"title"];
+        product.description = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"description"];
+        product.productId = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"productId"];
+        product.imgProduct = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"image"];   
+        product.oldPrice = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"oldPrice"];
+        product.novaCena = [[[JSON objectAtIndex:i] objectForKey:@"item"] objectForKey:@"newPrice"];
+        product.arrNumbers = [[JSON objectAtIndex:i] objectForKey:@"values"];
+        
+        NSLog(@"NUBBERS %@, %@", product.title, product.arrNumbers);
+        [_products addObject:product];
+        
+    }
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+   // navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    
+    
+
+    ViewController *viewController = [[navigationController viewControllers] objectAtIndex:0];
+    viewController.products = _products;
+    [viewController.tableView reloadData];
+    
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

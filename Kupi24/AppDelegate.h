@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDelegate> {
+    
+    NSMutableArray *_products;
+    
+    NSMutableData *responseData;
+    NSMutableData *pageData;
+    NSArray *JSON;
+    NSURLConnection *pageConnection;
+    NSData *deviceToken;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void)fillProducts;
 
 @end
